@@ -13,6 +13,8 @@ public:
 
     float calculerConsommation() override;
     float getPuissanceReactive() const;
+    std::string getType() const override; // Implémentation pour Industriel
+
 };
 
 #endif // CONSOMMATEUR_INDUSTRIEL_HPP

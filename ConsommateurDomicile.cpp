@@ -10,3 +10,7 @@ float ConsommateurDomicile::calculerConsommation() {
 float ConsommateurDomicile::getPuissanceActive() const {
     return puissanceActive;
 }
+
+std::string ConsommateurDomicile::getType() const {
+    return "Domicile";
+}

@@ -2,6 +2,7 @@
 #define CONSOMMATEUR_DOMICILE_HPP
 
 #include "Consommateur.hpp"
+#include <string>
 
 class ConsommateurDomicile : public Consommateur {
 private:
@@ -13,6 +14,8 @@ public:
 
     float calculerConsommation() override;
     float getPuissanceActive() const;
+    std::string getType() const override; // Implémentation pour Domicile
+
 };
 
 #endif // CONSOMMATEUR_DOMICILE_HPP

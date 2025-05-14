@@ -19,6 +19,8 @@ public:
     int getId() const;
     std::string getAdresse() const;
     float getPuissanceContractee() const;
+    virtual std::string getType() const = 0; // Méthode virtuelle pure
+
 };
 
 #endif // CONSOMMATEUR_HPP

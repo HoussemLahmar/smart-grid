@@ -2,6 +2,11 @@
 #include <iostream>
 #include <iomanip> // Pour afficher des nombres formatés
 
+#include "SmartGrid.hpp"
+#include "ConsommateurIndustriel.hpp"
+#include "ConsommateurDomicile.hpp"
+
+
 SmartGrid::SmartGrid(SystèmeStockage stockage) : stockage(stockage) {}
 
 void SmartGrid::ajouterUnitéProduction(std::shared_ptr<UnitéProduction> unité) {
@@ -58,4 +63,35 @@ void SmartGrid::afficherRésuméConsommateurs() {
                   << ", Localisation: " << consommateur->getLocalisation()
                   << ", Consommation: " << consommateur->calculerConsommation() << " kWh\n";
     }
+}
+
+
+
+void SmartGrid::sauvegarderConsommateurs(const std::string& filename) {
+    std::vector<std::vector<std::string>> data;
+    for (const auto& consommateur : consommateurs) {
+        std::vector<std::string> row = {
+            consommateur->getType(), // "Domicile" ou "Industriel"
+            std::to_string(consommateur->getId()),
+            consommateur->getAdresse(),
+            consommateur->getLocalisation(),
+            std::to_string(consommateur->getPuissanceContractee())
+        };
+        data.push_back(row);
+    }
+    CSVHandler::writeToFile(filename, data);
+}
+
+void SmartGrid::chargerConsommateurs(const std::string& filename) {
+    auto data = CSVHandler::readFromFile(filename);
+    for (const auto& row : data) {
+        if (row[0] == "Domicile") {
+            consommateurs.push_back(std::make_shared<ConsommateurDomicile>(
+                std::stoi(row[1]), row[2], row[3], 0.0f, 0.0f));
+        } else if (row[0] == "Industriel") {
+            consommateurs.push_back(std::make_shared<ConsommateurIndustriel>(
+                std::stoi(row[1]), row[2], row[3], 0.0f, 0.0f));
+        }
+    }
+    std::cout << "Consommateurs chargés depuis " << filename << std::endl;
 }

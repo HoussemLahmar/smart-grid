@@ -16,7 +16,7 @@
 #include "ConsommateurIndustriel.hpp"
 #include "SystèmeStockage.hpp"
 #include "RéseauDistribution.hpp"
-
+#include <string>
 // Fonction pour vider le buffer d'entrée
 void viderBuffer() {
     std::cin.clear();
@@ -32,7 +32,9 @@ void afficherMenuPrincipal() {
     std::cout << "4. Gérer le réseau de distribution\n";
     std::cout << "5. Simuler le réseau\n";
     std::cout << "6. Afficher les statistiques\n";
-    std::cout << "7. Quitter\n";
+    std::cout << "7. Sauvegarder les consommateurs\n";
+    std::cout << "8. Charger les consommateurs\n";
+    std::cout << "9. Quitter\n";
     std::cout << "================================================\n";
     std::cout << "Votre choix : ";
 }
@@ -60,7 +62,9 @@ void afficherMenuConsommateurs() {
     std::cout << "2. Ajouter un consommateur industriel\n";
     std::cout << "3. Afficher tous les consommateurs\n";
     std::cout << "4. Calculer les factures\n";
-    std::cout << "5. Retour au menu principal\n";
+    std::cout << "5. Sauvegarder les consommateurs\n";
+    std::cout << "6. Charger les consommateurs\n";
+    std::cout << "7. Retour au menu principal\n";
     std::cout << "=============================================\n";
     std::cout << "Votre choix : ";
 }
@@ -346,7 +350,7 @@ int main() {
     std::vector<std::shared_ptr<UnitéProduction>> unitésProduction;
     
     int choixPrincipal = 0;
-    while (choixPrincipal != 7) {
+    while (choixPrincipal != 9) {
         afficherMenuPrincipal();
         std::cin >> choixPrincipal;
         
@@ -518,7 +522,8 @@ int main() {
                 break;
             }
             
-            case 7: // Quitter
+
+            case 9: // Quitter
                 std::cout << "\nFermeture du programme. Au revoir !\n";
                 break;
                 

@@ -10,3 +10,7 @@ float ConsommateurIndustriel::calculerConsommation() {
 float ConsommateurIndustriel::getPuissanceReactive() const {
     return puissanceReactive;
 }
+
+std::string ConsommateurIndustriel::getType() const {
+    return "Industriel";
+}

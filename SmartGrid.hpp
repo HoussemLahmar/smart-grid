@@ -2,11 +2,15 @@
 #define SMARTGRID_HPP
 
 #include <vector>
+#include <string>
 #include <memory>
 #include <map>
 #include "UnitéProduction.hpp"
 #include "Consommateur.hpp"
 #include "SystèmeStockage.hpp"
+#include "ConsommateurDomicile.hpp"
+#include "ConsommateurDomicile.hpp"
+#include "CSVHandler.hpp"
 
 class SmartGrid {
 private:
@@ -23,6 +27,8 @@ public:
     void distribuerPuissance();
     void calculerFactures();
     void afficherRésuméConsommateurs();
+    void chargerConsommateurs(const std::string& filename);
+    void sauvegarderConsommateurs(const std::string& filename);
 };
 
 #endif // SMARTGRID_HPP
