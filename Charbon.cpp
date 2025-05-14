@@ -1,8 +1,8 @@
 #include "Charbon.hpp"
 #include <iostream>
 
-Charbon::Charbon(std::string loc, std::string carb, std::string qualite)
-    : SystèmeNonRenouvelable(loc, carb), qualite(qualite) {}
+Charbon::Charbon(std::string loc, std::string carb, std::string qualité)
+    : SystèmeNonRenouvelable(loc, carb), qualité(qualité) {}
 
 float Charbon::calculerPuissanceProduite() {
     // Exemple : P = η * m * PCI (PCI = pouvoir calorifique inférieur)
@@ -20,7 +20,7 @@ float Charbon::calculerEnergieProduite() {
 
 bool Charbon::detecterAnomalie() {
     // Exemple simple d'anomalie : qualité du charbon non valide
-    if (qualite.empty() || (qualite != "Haute" && qualite != "Moyenne" && qualite != "Basse")) {
+    if (qualité.empty() || (qualité != "Haute" && qualité != "Moyenne" && qualité != "Basse")) {
         return true;
     }
     return false;

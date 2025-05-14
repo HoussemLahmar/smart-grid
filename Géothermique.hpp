@@ -14,6 +14,12 @@ public:
     float calculerPuissanceProduite() override;
     float calculerEnergieProduite() override;
     bool detecterAnomalie() override;
+
+    // Getter pour profondeur
+    float getProfondeur() const { return profondeur; }
+
+    // Setter pour profondeur
+    void setProfondeur(float nouvelleProfondeur) { profondeur = nouvelleProfondeur; }
 };
 
 #endif // GEOTHERMIQUE_HPP

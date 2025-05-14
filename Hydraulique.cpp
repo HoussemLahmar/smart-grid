@@ -1,14 +1,14 @@
 #include "Hydraulique.hpp"
 #include <iostream>
 
-Hydraulique::Hydraulique(std::string loc, float debit, float hauteur)
-    : SystèmeRenouvelable(loc, "Hydraulique"), debit(debit), hauteurChute(hauteur) {}
+Hydraulique::Hydraulique(std::string loc, float débit, float hauteur)
+    : SystèmeRenouvelable(loc, "Hydraulique"), débit(débit), hauteurChute(hauteur) {}
 
 float Hydraulique::calculerPuissanceProduite() {
     // Exemple : P = ρ * g * h * Q (ρ = 1000 kg/m³, g = 9.81 m/s²)
     const float densiteEau = 1000;  // kg/m³
     const float gravite = 9.81;  // m/s²
-    puissanceProduite = densiteEau * gravite * hauteurChute * debit;
+    puissanceProduite = densiteEau * gravite * hauteurChute * débit;
     return puissanceProduite;
 }
 
@@ -19,7 +19,7 @@ float Hydraulique::calculerEnergieProduite() {
 
 bool Hydraulique::detecterAnomalie() {
     // Exemple simple d'anomalie : débit ou hauteur en dehors des limites attendues
-    if (debit <= 0 || hauteurChute <= 0) {
+    if (débit <= 0 || hauteurChute <= 0) {
         return true;
     }
     return false;

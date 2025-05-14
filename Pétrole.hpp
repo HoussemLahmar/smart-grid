@@ -14,6 +14,12 @@ public:
     float calculerPuissanceProduite() override;
     float calculerEnergieProduite() override;
     bool detecterAnomalie() override;
+
+    // Getter pour type
+    std::string getType() const { return type; }
+
+    // Setter pour type
+    void setType(const std::string& nouveauType) { type = nouveauType; }
 };
 
 #endif // PETROLE_HPP

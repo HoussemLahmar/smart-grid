@@ -15,6 +15,18 @@ public:
     float calculerPuissanceProduite() override;
     float calculerEnergieProduite() override;
     bool detecterAnomalie() override;
+
+    // Getter pour hauteur
+    float getHauteur() const { return hauteur; }
+
+    // Setter pour hauteur
+    void setHauteur(float nouvelleHauteur) { hauteur = nouvelleHauteur; }
+
+    // Getter pour vitesseVent
+    float getVitesseVent() const { return vitesseVent; }
+
+    // Setter pour vitesseVent
+    void setVitesseVent(float nouvelleVitesse) { vitesseVent = nouvelleVitesse; }
 };
 
 #endif // EOLIENNE_HPP
