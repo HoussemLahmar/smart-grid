@@ -15,14 +15,6 @@ public:
     float calculerPuissanceProduite() override;
     float calculerEnergieProduite() override;
     bool detecterAnomalie() override;
-    
-    // Getters
-    float getRendement() const;
-    float getSurfacePanneaux() const;
-    
-    // Setters
-    void setRendement(float rendement);
-    void setSurfacePanneaux(float surface);
 };
 
 #endif // SOLAIRE_HPP

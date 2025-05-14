@@ -23,21 +23,3 @@ bool Solaire::detecterAnomalie() {
     }
     return false;
 }
-
-// Implémentation des getters
-float Solaire::getRendement() const {
-    return rendement;
-}
-
-float Solaire::getSurfacePanneaux() const {
-    return surfacePanneaux;
-}
-
-// Implémentation des setters
-void Solaire::setRendement(float rendement) {
-    this->rendement = rendement;
-}
-
-void Solaire::setSurfacePanneaux(float surface) {
-    this->surfacePanneaux = surface;
-}

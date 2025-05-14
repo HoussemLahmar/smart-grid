@@ -28,21 +28,3 @@ bool Éolienne::detecterAnomalie() {
     }
     return false;
 }
-
-// Implémentation des getters
-float Éolienne::getHauteur() const {
-    return hauteur;
-}
-
-float Éolienne::getVitesseVent() const {
-    return vitesseVent;
-}
-
-// Implémentation des setters
-void Éolienne::setHauteur(float hauteur) {
-    this->hauteur = hauteur;
-}
-
-void Éolienne::setVitesseVent(float vitesse) {
-    this->vitesseVent = vitesse;
-}
